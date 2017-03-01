@@ -79,7 +79,7 @@ celerybeat-schedule
 .env
 
 # virtualenv
-venv/
+env_compost/
 ENV/
 
 # Spyder project settings
@@ -87,3 +87,8 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Vim
+*.swp
+*.swo
+
