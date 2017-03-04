@@ -54,7 +54,9 @@ ROOT_URLCONF = 'compost.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'compost/templates'
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
