@@ -92,3 +92,5 @@ ENV/
 *.swp
 *.swo
 
+# SQLite
+db.sqlite3
