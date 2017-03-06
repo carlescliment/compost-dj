@@ -4,8 +4,8 @@ from compost.models import Measurement
 import datetime
 
 def home(request):
-    now = datetime.datetime.now()
-    return render(request, 'home.html', {'now': now})
+    measurements = Measurement.objects.all
+    return render(request, 'home.html', {'measurements': measurements})
 
 def new_measurement(request):
     return render(request, 'measurements/add.html')

@@ -1,4 +1,21 @@
 {% extends 'layout.html' %}
 {% block body %}
   <p><a href="/measurements/new">New measurement</a></p>
+
+  <h2>Measurements</h2>
+
+  {% if measurements %}
+  <table>
+    <thead>
+      <th>Temperature</th><th>Taken at</th>
+    </thead>
+    <tbody>
+      {% for measurement in measurements %}
+      <tr><td>{{ measurement.temperature }}</td><td>{{ measurement.taken_at }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>Sorry, still no measurements available</p>
+  {% endif %}
 {% endblock %}
