@@ -5,3 +5,6 @@ import datetime
 def home(request):
     now = datetime.datetime.now()
     return render(request, 'home.html', {'now': now})
+
+def add_measurement(request):
+    return render(request, 'measurements/add.html')

@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from compost.views import home
+from compost.views import home, add_measurement
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home)
+    url(r'^measurements/add/$', add_measurement),
+    url(r'^$', home),
 ]
