@@ -2,4 +2,11 @@
 
 {% block body %}
   <p><a href="/">Back to index</a></p>
+
+  <div>
+    <form method="GET" action="/measurements/create/">
+      <input type="number" name="temperature" placeholder="Temperature in C" step="0.01"></input>
+      <input type="submit" />
+    </form>
+  </div>
 {% endblock %}
