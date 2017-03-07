@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from compost.models import Measurement
 from compost.forms import MeasurementForm
-import datetime
+from compost.models import Measurement
+from compost.services import RegisterMeasurement
 
 def home(request):
     measurements = Measurement.objects.all
@@ -12,9 +12,7 @@ def new_measurement(request):
     if request.method == 'POST':
         form = MeasurementForm(request.POST)
         if form.is_valid():
-            cd = form.cleaned_data
-            now = datetime.datetime.now()
-            Measurement.objects.create(temperature=cd['temperature'], taken_at=now)
+            RegisterMeasurement().execute(form.cleaned_data)
             return redirect('home')
     else:
         form = MeasurementForm()
