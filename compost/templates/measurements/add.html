@@ -4,8 +4,12 @@
   <p><a href="/">Back to index</a></p>
 
   <div>
-    <form method="GET" action="/measurements/create/">
-      <input type="number" name="temperature" placeholder="Temperature in C" step="0.01"></input>
+    {% if form.errors %}
+    <p style="color: red;">Please correct the error{{ form.errors|pluralize }} below</p>
+    {% endif %}
+    <form action="" method="POST">
+      {{ form.as_p }}
+      {% csrf_token %}
       <input type="submit" />
     </form>
   </div>
