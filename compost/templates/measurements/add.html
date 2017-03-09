@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-  <p><a href="/">Back to index</a></p>
+  <p><a href="{% url 'home' %}">Back to index</a></p>
 
   <div>
     {% if form.errors %}
